@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option go_package = ".;verify";
+// go_package由两部分组成，";"隔开。
+// 前半部分表示生成pb文件的路径，后半部分表示pb文件的包名。
+
+package verify;
+
+service Verify {
+    rpc SendToUserEmail(EmailVerifyReq) returns (EmailVerifyResp) {}
+    rpc VerifyUserEmail(EmailVerifyReq) returns (EmailVerifyResp) {}
+
+}
+
+message EmailVerifyReq {
+    string uid = 1;
+    string type = 2;
+    string email = 3;
+    string info = 4;
+}
+
+message EmailVerifyResp {
+    int32 code = 1;
+    string msg = 2;
+}

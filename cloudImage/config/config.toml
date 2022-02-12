@@ -1,0 +1,14 @@
+# HTTP Server
+[server]
+	Address     = ":8199"
+	ServerRoot  = "public"
+	ServerAgent = "cloudImage"
+	LogPath     = "/tmp/log/cloudImage/server"
+
+	ClientMaxBodySize = "200MB"
+
+# Logger.
+[logger]
+    Path        = "/tmp/log/cloudImage"
+    Level       = "all"
+    Stdout      = true
